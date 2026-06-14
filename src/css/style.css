@@ -40,3 +40,44 @@ body.light {
   padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+
+  font-family: "Inter", sans-serif;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--bg),
+      #172554
+    );
+
+  color: var(--text);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 40px 20px;
+}
+
+.app {
+  width: min(100%, 950px);
+
+  background: rgba(255,255,255,.03);
+
+  backdrop-filter: blur(20px);
+
+  border: 1px solid var(--border);
+
+  border-radius: 28px;
+
+  padding: 30px;
+
+  box-shadow: var(--shadow);
+}
