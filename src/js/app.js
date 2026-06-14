@@ -97,3 +97,69 @@ function addTask() {
     "✅ Tarefa adicionada"
   );
 }
+
+/* =========================
+   DELETE
+========================= */
+
+function deleteTask(id) {
+  taskManager.removeTask(id);
+
+  render();
+
+  showToast(
+    "🗑️ Tarefa removida",
+    "#ef4444"
+  );
+}
+
+/* =========================
+   TOGGLE
+========================= */
+
+function toggleTask(id) {
+  taskManager.toggleTask(id);
+
+  render();
+
+  showToast(
+    "✔️ Status atualizado",
+    "#22c55e"
+  );
+}
+
+/* =========================
+   EDIT
+========================= */
+
+function editTask(id) {
+  const task =
+    taskManager.getTaskById(id);
+
+  if (!task) return;
+
+  const newTitle =
+    prompt(
+      "Editar tarefa:",
+      task.title
+    );
+
+  if (
+    newTitle === null ||
+    !newTitle.trim()
+  ) {
+    return;
+  }
+
+  taskManager.editTask(
+    id,
+    newTitle
+  );
+
+  render();
+
+  showToast(
+    "✏️ Tarefa atualizada",
+    "#3b82f6"
+  );
+}
