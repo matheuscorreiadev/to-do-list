@@ -275,3 +275,48 @@ taskList.addEventListener(
 
   }
 );
+
+/* =========================
+   THEME
+========================= */
+
+function loadTheme() {
+  const theme =
+    Storage.getTheme();
+
+  if (theme === "light") {
+    document.body.classList.add(
+      "light"
+    );
+
+    themeToggle.textContent =
+      "☀️";
+  }
+}
+
+themeToggle.addEventListener(
+  "click",
+  () => {
+
+    document.body.classList.toggle(
+      "light"
+    );
+
+    const isLight =
+      document.body.classList.contains(
+        "light"
+      );
+
+    Storage.saveTheme(
+      isLight
+        ? "light"
+        : "dark"
+    );
+
+    themeToggle.textContent =
+      isLight
+        ? "☀️"
+        : "🌙";
+
+  }
+);
