@@ -32,7 +32,7 @@ Aplicação moderna de gerenciamento de tarefas desenvolvida com HTML5, CSS3 e J
 
 ## 🌐 Deploy
 
-Você pode acessar a aplicação rodando no [GitHub Pages aqui](https://matheuscorreiadev.github.io/to-do-list/).
+Você pode acessar a aplicação rodando no [GitHub Pages aqui](https://matheuscorreiadev.github.io/TaskFlow/).
 
 ## 📄 Licença
 
