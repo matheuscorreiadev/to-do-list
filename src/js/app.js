@@ -218,3 +218,60 @@ searchInput.addEventListener(
     render();
   }, 250)
 );
+
+/* =========================
+   TASK ACTIONS
+========================= */
+
+taskList.addEventListener(
+  "click",
+  event => {
+
+    const taskElement =
+      event.target.closest(".task");
+
+    if (!taskElement) return;
+
+    const id =
+      taskElement.dataset.id;
+
+    if (
+      event.target.classList.contains(
+        "delete-btn"
+      )
+    ) {
+      deleteTask(id);
+    }
+
+    if (
+      event.target.classList.contains(
+        "edit-btn"
+      )
+    ) {
+      editTask(id);
+    }
+
+  }
+);
+
+taskList.addEventListener(
+  "change",
+  event => {
+
+    if (
+      event.target.classList.contains(
+        "toggle-task"
+      )
+    ) {
+
+      const taskElement =
+        event.target.closest(".task");
+
+      const id =
+        taskElement.dataset.id;
+
+      toggleTask(id);
+    }
+
+  }
+);
