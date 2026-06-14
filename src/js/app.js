@@ -163,3 +163,58 @@ function editTask(id) {
     "#3b82f6"
   );
 }
+
+/* =========================
+   EVENTS
+========================= */
+
+addTaskBtn.addEventListener(
+  "click",
+  addTask
+);
+
+taskInput.addEventListener(
+  "keydown",
+  e => {
+    if (e.key === "Enter") {
+      addTask();
+    }
+  }
+);
+
+/* =========================
+   FILTERS
+========================= */
+
+document
+  .querySelectorAll(".filter-btn")
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        currentFilter =
+          button.dataset.filter;
+
+        ui.setActiveFilter(
+          currentFilter
+        );
+
+        render();
+
+      }
+    );
+
+  });
+
+/* =========================
+   SEARCH
+========================= */
+
+searchInput.addEventListener(
+  "input",
+  debounce(() => {
+    render();
+  }, 250)
+);
