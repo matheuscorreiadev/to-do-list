@@ -21,3 +21,22 @@
 
   --radius: 18px;
 }
+
+body.light {
+  --bg: #f1f5f9;
+  --bg-secondary: #ffffff;
+  --card: #ffffff;
+  --border: rgba(15,23,42,.08);
+
+  --text: #0f172a;
+  --text-secondary: #64748b;
+
+  --shadow:
+    0 10px 30px rgba(15,23,42,.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
