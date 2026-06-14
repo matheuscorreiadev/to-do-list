@@ -320,3 +320,53 @@ themeToggle.addEventListener(
 
   }
 );
+
+/* =========================
+   DRAG & DROP
+========================= */
+
+function initSortable() {
+
+  new Sortable(taskList, {
+
+    animation: 200,
+
+    onEnd: () => {
+
+      const ids = [
+        ...document.querySelectorAll(
+          ".task"
+        )
+      ].map(task =>
+        task.dataset.id
+      );
+
+      taskManager.updateOrder(
+        ids
+      );
+
+      showToast(
+        "↕️ Ordem atualizada",
+        "#3b82f6"
+      );
+    }
+
+  });
+
+}
+
+/* =========================
+   INIT
+========================= */
+
+function init() {
+
+  loadTheme();
+
+  render();
+
+  initSortable();
+
+}
+
+init();
